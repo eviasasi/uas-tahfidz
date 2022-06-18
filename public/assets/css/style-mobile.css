@@ -1,0 +1,50 @@
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: #21678B !important;
+    }
+
+    .login-brand {
+        margin: 0px 0;
+        margin-bottom: 18px !important;
+        font-size: 15px;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        color: #666;
+        text-align: center !important;
+    }
+
+    img {
+        width: 100px !important;
+        position: relative;
+        text-align: center;
+    }
+
+    .title-mobile {
+        font-size: 14pt;
+    }
+
+    .card {
+        margin-bottom: 0 !important;
+    }
+
+    .title-mobile-1 {
+        font-size: 12pt;
+    }
+
+    .simple-footer {
+        display: none;
+    }
+
+    .card .card-body {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .form-group {
+        margin-bottom: 20px !important;
+    }
+
+    .btn.btn-lg {
+        font-size: 13pt;
+    }
+}
