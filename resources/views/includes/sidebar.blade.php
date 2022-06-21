@@ -13,6 +13,11 @@
              <li class="nav-item">
                  <a href="" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
              </li>
+             <li class="menu-header">Master Data</li>
+             <li class="nav-item">
+                 <a href="{{ route('kelas.index') }}" class="nav-link"><i
+                         class="fas fa-fire"></i><span>Kelas</span></a>
+             </li>
          </ul>
      </aside>
  </div>

@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kelas;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Session;
 
 class KelasController extends Controller
 {
@@ -13,7 +16,8 @@ class KelasController extends Controller
      */
     public function index()
     {
-        //
+        $kelas = Kelas::all();
+        return view('pages.kelas.index', compact('kelas'));
     }
 
     /**
@@ -34,7 +38,16 @@ class KelasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama_kelas' => 'required'
+        ]);
+
+        $kelas = new Kelas();
+        $kelas->nama_kelas = $request->nama_kelas;
+        $kelas->save();
+        Session::flash('message', 'Data berhasil disimpan!');
+
+        return back()->with('success', 'Data berhasil disimpan');
     }
 
     /**
@@ -68,7 +81,15 @@ class KelasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nama_kelas' => 'required'
+        ]);
+
+        $kelas = Kelas::findOrFail($id);
+        $kelas->nama_kelas = $request->nama_kelas;
+        $kelas->update();
+        Session::flash('message', 'Data berhasil diupdate!');
+        return back();
     }
 
     /**
@@ -79,6 +100,9 @@ class KelasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $kelas = Kelas::find($id);
+        $kelas->delete();
+        Session::flash('message', 'Data berhasil disimpan!');
+        return back()->with('success', 'Data berhasil dihapus');
     }
 }
