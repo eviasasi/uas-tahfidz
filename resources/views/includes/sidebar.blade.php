@@ -11,12 +11,25 @@
 
              <li class="menu-header">Dashboard</li>
              <li class="nav-item">
-                 <a href="" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
+                 <a href="{{ route('home') }}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
              </li>
              <li class="menu-header">Master Data</li>
-             <li class="nav-item">
+
+             <li class="nav-item {{ set_active('kelas.*') }}">
                  <a href="{{ route('kelas.index') }}" class="nav-link"><i
                          class="fas fa-fire"></i><span>Kelas</span></a>
+             </li>
+             <li class="nav-item {{ set_active('jenis_kelas.*') }}">
+                 <a href="{{ route('jenis_kelas.index') }}" class="nav-link"><i class="fas fa-fire"></i><span>Jenis
+                         Kelas</span></a>
+             </li>
+             <li class="nav-item {{ set_active('surah_quran.*') }}">
+                 <a href="{{ route('surah_quran.index') }}" class="nav-link"><i class="fas fa-fire"></i><span>Data
+                         Hafalan</span></a>
+             </li>
+             <li class="nav-item">
+                 <a href="#" class="nav-link"><i class="fas fa-fire"></i><span>Hasil
+                         Laporan</span></a>
              </li>
          </ul>
      </aside>

@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\SurahQuran;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Session;
 
 class SurahQuranController extends Controller
 {
@@ -13,7 +16,8 @@ class SurahQuranController extends Controller
      */
     public function index()
     {
-        //
+        $surah = SurahQuran::all();
+        return view('pages.surah_quran.index', compact('surah'));
     }
 
     /**
@@ -34,7 +38,17 @@ class SurahQuranController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama_surah' => 'required',
+            'jumlah_ayat' => 'required',
+        ]);
+
+        SurahQuran::create([
+            'nama_surah' => $request->input('nama_surah'),
+            'jumlah_ayat' => $request->input('jumlah_ayat'),
+        ]);
+        Session::flash('message', 'Data Surah Berhasil ditambah');
+        return back()->with('success', 'data berhasil ditambah');
     }
 
     /**
@@ -68,7 +82,17 @@ class SurahQuranController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nama_surah' => 'required',
+            'jumlah_ayat' => 'required',
+        ]);
+
+        SurahQuran::find($id)->update([
+            'nama_surah' => $request->input('nama_surah'),
+            'jumlah_ayat' => $request->input('jumlah_ayat'),
+        ]);
+        Session::flash('message', 'Data Surah Berhasil diupdate');
+        return back()->with('success', 'data berhasil diupdate');
     }
 
     /**
@@ -79,6 +103,8 @@ class SurahQuranController extends Controller
      */
     public function destroy($id)
     {
-        //
+        SurahQuran::find($id)->delete();
+        Session::flash('message', 'Data Surah Berhasil dihapus');
+        return back()->with('success', 'data berhasil dihapus');
     }
 }

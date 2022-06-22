@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\JenisKelasController;
 use App\Http\Controllers\KelasController;
+use App\Http\Controllers\SurahQuranController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,8 +22,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::resource('/kelas', KelasController::class);
+    Route::resource('/jenis_kelas', JenisKelasController::class);
+    Route::resource('/surah_quran', SurahQuranController::class);
 });

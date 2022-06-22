@@ -10,4 +10,9 @@ class JenisKelas extends Model
     use HasFactory;
     protected $table = 'jenis_kelas';
     protected $guarded = [];
+
+    public function kelas()
+    {
+        return $this->belongsTo(Kelas::class, 'kelas_id', 'id');
+    }
 }
