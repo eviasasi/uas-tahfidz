@@ -18,7 +18,7 @@
                         </div>
                         <div class="card-wrap">
                             <div class="card-header">
-                                <h4 class="text-dark font-weight-bolder text-uppercase">Total UMKM</h4>
+                                <h4 class="text-dark font-weight-bolder text-uppercase">Total User</h4>
                             </div>
                             <div class="card-body">
 
@@ -33,7 +33,7 @@
                         </div>
                         <div class="card-wrap">
                             <div class="card-header">
-                                <h4 class="text-dark font-weight-bold text-uppercase">Total Produk</h4>
+                                <h4 class="text-dark font-weight-bold text-uppercase">Total Siswa</h4>
                             </div>
                             <div class="card-body">
 
@@ -48,7 +48,7 @@
                         </div>
                         <div class="card-wrap">
                             <div class="card-header">
-                                <h4 class="text-dark font-weight-bolder text-uppercase">Pelanggan</h4>
+                                <h4 class="text-dark font-weight-bolder text-uppercase">Total Surah</h4>
                             </div>
                             <div class="card-body">
 
